@@ -25,7 +25,6 @@ router.get("/:id", (req, res) => {
       res.status(404).json({ message: "No library card found with that id!" });
       return;
     }
-
     res.status(200).json(categoryData);
   } catch (err) {
     res.status(500).json(err);
@@ -57,7 +56,6 @@ router.put("/:id", (req, res) => {
         },
       }
     );
-
     res.status(200).json(category);
   } catch (err) {
     res.status(500).json(err);
@@ -72,12 +70,10 @@ router.delete("/:id", (req, res) => {
         id: req.params.id,
       },
     });
-
     if (!categoryData) {
       res.status(404).json({ message: "No category found with that id!" });
       return;
     }
-
     res.status(200).json(categoryData);
   } catch (err) {
     res.status(500).json(err);
